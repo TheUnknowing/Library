@@ -1,105 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>📚 Ma Bibliothèque PDF</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bibliothèque Virtuelle</title>
   <style>
     body {
-      background-color: #fdf6e3;
-      color: #3e2c1c;
-      font-family: 'Georgia', serif;
       margin: 0;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f8f4e3;
+      color: #3e3e3e;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #5b3924;
-      border-bottom: 4px solid #a0522d;
-      padding-bottom: 0.5rem;
+    header {
+      background-color: #8b5e3c;
+      padding: 20px;
       text-align: center;
+      color: #fff;
+      font-size: 2em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    .book-list {
-      width: 100%;
-      max-width: 700px;
-      background-color: #fff8e7;
-      border: 2px solid #d2b48c;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .library-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .book-list ul {
-      list-style-type: none;
-      padding-left: 0;
+    .book-card {
+      background-color: #fffef9;
+      border: 1px solid #d1c7b7;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .book-list li {
-      margin: 1rem 0;
-      padding: 1rem;
-      border-left: 5px solid #a0522d;
-      background-color: #f9f5ef;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    .book-list li:hover {
-      background-color: #f0e6d2;
+    .book-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
     }
 
-    .book-list a {
-      color: #5b3924;
+    .book-link {
       text-decoration: none;
-      font-size: 1.2rem;
+      color: #4a3b2d;
+      font-weight: 500;
     }
 
-    .book-list a::before {
-      content: "📖 ";
+    .book-link:hover {
+      text-decoration: underline;
+      color: #a8652e;
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .book-list {
-        padding: 1rem;
-      }
-
-      .book-list a {
-        font-size: 1rem;
-      }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #8b5e3c;
+      color: #fff;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <h1>📚 Bibliothèque PDF</h1>
-  <div class="book-list">
-    <ul>
-      <li><a href="pdf/Discours-de-la-méthode.pdf" target="_blank">📖 Livre 1 - Discours-de-la-méthode</a></li>
-      <li><a href="pdf/EssaisI.pdf" target="_blank">📖 Livre 2 - EssaisI</a></li>
-      <li><a href="pdf/Influence et manipulation Lart de la persuasion.pdf" target="_blank">📖 Livre 3 - Influence et manipulation Lart de la persuasion</a></li>
-      <li><a href="pdf/M_Aurele_Pensees.pdf" target="_blank">📖 Livre 4 - M_Aurele_Pensees</a></li>
-      <li><a href="pdf/PSYCHOLOGIE SOCIALE - COURS (28 Pages - 172 Ko).pdf" target="_blank">📖 Livre 5 - PSYCHOLOGIE SOCIALE - COURS</a></li>
-      <li><a href="pdf/Power_extrait.pdf" target="_blank">📖 Livre 6 - Power_extrait</a></li>
-      <li><a href="pdf/Thinking, Fast and Slow by Daniel Kahneman (z-lib.org).pdf" target="_blank">📖 Livre 7 - Thinking, Fast and Slow by Daniel Kahneman</a></li>
-      <li><a href="pdf/Tracers in the Dark PDF.pdf" target="_blank">📖 Livre 8 - Tracers in the Dark</a></li>
-      <li><a href="pdf/art-de-la-guerre.pdf" target="_blank">📖 Livre 9 - art-de-la-guerre</a></li>
-      <li><a href="pdf/julien_taoteking.pdf" target="_blank">📖 Livre 10 - julien_taoteking</a></li>
-      <li><a href="pdf/nietzsche_zarathoustra.pdf" target="_blank">📖 Livre 11 - nietzsche_zarathoustra</a></li>
-      <li><a href="pdf/qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb.pdf" target="_blank">📖 Livre 12 - qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb</a></li>
-      <!-- Tu peux ajouter autant de livres que tu veux -->
-    </ul>
+
+  <header>📚 Ma Bibliothèque Virtuelle</header>
+
+  <div class="library-container">
+    <div class="book-card">
+      <div class="book-title">📖 Livre 1</div>
+      <a class="book-link" href="pdf/Discours-de-la-méthode.pdf" target="_blank">Discours de la méthode</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 2</div>
+      <a class="book-link" href="pdf/EssaisI.pdf" target="_blank">Essais I</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 3</div>
+      <a class="book-link" href="pdf/Influence et manipulation Lart de la persuasion.pdf" target="_blank">Influence et manipulation</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 4</div>
+      <a class="book-link" href="pdf/M_Aurele_Pensees.pdf" target="_blank">Pensées – Marc Aurèle</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 5</div>
+      <a class="book-link" href="pdf/PSYCHOLOGIE SOCIALE - COURS (28 Pages - 172 Ko).pdf" target="_blank">Psychologie Sociale</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 6</div>
+      <a class="book-link" href="pdf/Power_extrait.pdf" target="_blank">Power (extrait)</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 7</div>
+      <a class="book-link" href="pdf/Thinking, Fast and Slow by Daniel Kahneman (z-lib.org).pdf" target="_blank">Thinking, Fast and Slow</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 8</div>
+      <a class="book-link" href="pdf/Tracers in the Dark PDF.pdf" target="_blank">Tracers in the Dark</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 9</div>
+      <a class="book-link" href="pdf/art-de-la-guerre.pdf" target="_blank">L'art de la guerre</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 10</div>
+      <a class="book-link" href="pdf/julien_taoteking.pdf" target="_blank">Tao Te King</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 11</div>
+      <a class="book-link" href="pdf/nietzsche_zarathoustra.pdf" target="_blank">Ainsi parlait Zarathoustra</a>
+    </div>
+    <div class="book-card">
+      <div class="book-title">📖 Livre 12</div>
+      <a class="book-link" href="pdf/qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb.pdf" target="_blank">Livre sans titre</a>
+    </div>
   </div>
+
+  <footer>© 2025 - Ma Bibliothèque Virtuelle</footer>
+
 </body>
 </html>
