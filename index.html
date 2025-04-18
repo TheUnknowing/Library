@@ -2,49 +2,104 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Bibliothèque PDF</title>
+  <title>📚 Ma Bibliothèque PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #121212;
-      color: #00ff99;
-      font-family: monospace;
+      background-color: #fdf6e3;
+      color: #3e2c1c;
+      font-family: 'Georgia', serif;
+      margin: 0;
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     h1 {
-      color: #00ff99;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #5b3924;
+      border-bottom: 4px solid #a0522d;
+      padding-bottom: 0.5rem;
+      text-align: center;
     }
-    ul {
+
+    .book-list {
+      width: 100%;
+      max-width: 700px;
+      background-color: #fff8e7;
+      border: 2px solid #d2b48c;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-list ul {
       list-style-type: none;
-      padding: 0;
+      padding-left: 0;
     }
-    li {
-      margin: 0.5rem 0;
+
+    .book-list li {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-left: 5px solid #a0522d;
+      background-color: #f9f5ef;
+      border-radius: 8px;
+      transition: background 0.3s ease;
     }
-    a {
-      color: #00ff99;
+
+    .book-list li:hover {
+      background-color: #f0e6d2;
+    }
+
+    .book-list a {
+      color: #5b3924;
       text-decoration: none;
+      font-size: 1.2rem;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .book-list a::before {
+      content: "📖 ";
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .book-list {
+        padding: 1rem;
+      }
+
+      .book-list a {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <h1>📚 Bibliothèque PDF</h1>
-  <ul>
-    <li><a href="pdf/Discours-de-la-méthode.pdf" target="_blank">📖 Livre 1 - Discours-de-la-méthode</a></li>
-    <li><a href="pdf/EssaisI.pdf" target="_blank">📖 Livre 2 - EssaisI</a></li>
-    <li><a href="pdf/Influence et manipulation Lart de la persuasion.pdf" target="_blank">📖 Livre 3 - Influence et manipulation Lart de la persuasion</a></li>
-    <li><a href="pdf/M_Aurele_Pensees.pdf" target="_blank">📖 Livre 4 - M_Aurele_Pensees</a></li>
-    <li><a href="pdf/PSYCHOLOGIE SOCIALE - COURS (28 Pages - 172 Ko).pdf" target="_blank">📖 Livre 5 - PSYCHOLOGIE SOCIALE - COURS</a></li>
-    <li><a href="pdf/Power_extrait.pdf" target="_blank">📖 Livre 6 - Power_extrait</a></li>
-    <li><a href="pdf/Thinking, Fast and Slow by Daniel Kahneman (z-lib.org).pdf" target="_blank">📖 Livre 7 - Thinking, Fast and Slow by Daniel Kahneman</a></li>
-    <li><a href="pdf/Tracers in the Dark PDF.pdf" target="_blank">📖 Livre 8 - Tracers in the Dark</a></li>
-    <li><a href="pdf/art-de-la-guerre.pdf" target="_blank">📖 Livre 9 - art-de-la-guerre</a></li>
-    <li><a href="pdf/julien_taoteking.pdf" target="_blank">📖 Livre 10 - julien_taoteking</a></li>
-    <li><a href="pdf/nietzsche_zarathoustra.pdf" target="_blank">📖 Livre 11 - nietzsche_zarathoustra</a></li>
-    <li><a href="pdf/qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb.pdf" target="_blank">📖 Livre 12 - qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb</a></li>
-    <!-- Tu peux ajouter autant de livres que tu veux -->
-  </ul>
+  <div>
+    <ul>
+      <li><a href="pdf/Discours-de-la-méthode.pdf" target="_blank">📖 Livre 1 - Discours-de-la-méthode</a></li>
+      <li><a href="pdf/EssaisI.pdf" target="_blank">📖 Livre 2 - EssaisI</a></li>
+      <li><a href="pdf/Influence et manipulation Lart de la persuasion.pdf" target="_blank">📖 Livre 3 - Influence et manipulation Lart de la persuasion</a></li>
+      <li><a href="pdf/M_Aurele_Pensees.pdf" target="_blank">📖 Livre 4 - M_Aurele_Pensees</a></li>
+      <li><a href="pdf/PSYCHOLOGIE SOCIALE - COURS (28 Pages - 172 Ko).pdf" target="_blank">📖 Livre 5 - PSYCHOLOGIE SOCIALE - COURS</a></li>
+      <li><a href="pdf/Power_extrait.pdf" target="_blank">📖 Livre 6 - Power_extrait</a></li>
+      <li><a href="pdf/Thinking, Fast and Slow by Daniel Kahneman (z-lib.org).pdf" target="_blank">📖 Livre 7 - Thinking, Fast and Slow by Daniel Kahneman</a></li>
+      <li><a href="pdf/Tracers in the Dark PDF.pdf" target="_blank">📖 Livre 8 - Tracers in the Dark</a></li>
+      <li><a href="pdf/art-de-la-guerre.pdf" target="_blank">📖 Livre 9 - art-de-la-guerre</a></li>
+      <li><a href="pdf/julien_taoteking.pdf" target="_blank">📖 Livre 10 - julien_taoteking</a></li>
+      <li><a href="pdf/nietzsche_zarathoustra.pdf" target="_blank">📖 Livre 11 - nietzsche_zarathoustra</a></li>
+      <li><a href="pdf/qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb.pdf" target="_blank">📖 Livre 12 - qt6016r46m_noSplash_d860cac4677959b1a80b1fac096c62bb</a></li>
+      <!-- Tu peux ajouter autant de livres que tu veux -->
+    </ul>
+  </div>
 </body>
 </html>
