@@ -7,8 +7,8 @@
   <style>
     /* Général */
     body {
-      background-color: #121212;
-      color: #e0e0e0;
+      background-color: #121212;  /* Fond noir */
+      color: #e0e0e0;  /* Texte gris clair */
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 2rem;
@@ -20,8 +20,8 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #f5d739;
-      border-bottom: 3px solid #4e4e4e;
+      color: #ff4c4c;  /* Rouge vif */
+      border-bottom: 3px solid #444;  /* Gris foncé */
       padding-bottom: 0.5rem;
       text-align: center;
     }
@@ -33,9 +33,9 @@
       width: 100%;
       max-width: 500px;
       font-size: 1rem;
-      border: 1px solid #4e4e4e;
+      border: 1px solid #444;  /* Gris foncé */
       border-radius: 8px;
-      background-color: #333;
+      background-color: #333;  /* Fond gris sombre */
       color: #e0e0e0;
     }
 
@@ -50,8 +50,8 @@
 
     /* Style pour chaque carte de livre */
     .book-card {
-      background-color: #2c2c2c;
-      border: 1px solid #444;
+      background-color: #2c2c2c;  /* Gris foncé */
+      border: 1px solid #444;  /* Gris très foncé */
       border-radius: 12px;
       padding: 1.5rem;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -70,12 +70,12 @@
       font-size: 1.1rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
-      color: #f5d739;
+      color: #ff4c4c;  /* Rouge vif */
     }
 
     .book-link {
       text-decoration: none;
-      color: #bb86fc;
+      color: #f44336;  /* Rouge sombre */
       font-size: 0.95rem;
     }
 
@@ -87,7 +87,7 @@
       font-size: 2rem;
       margin-bottom: 0.5rem;
       display: block;
-      color: #f5d739;
+      color: #ff4c4c;  /* Rouge vif */
     }
 
     @media (max-width: 600px) {
@@ -114,7 +114,7 @@
   <input type="text" id="searchInput" placeholder="🔍 Rechercher un livre...">
 
   <div class="book-list" id="bookList">
-    <!-- Liste de livres avec design sombre et cadre cliquable -->
+    <!-- Liste de livres avec design gris, rouge et noir -->
     <a href="pdf/Discours-de-la-méthode.pdf" target="_blank" class="book-card">
       <span class="book-icon">📖</span>
       <div class="book-title">Livre 1 - Discours de la méthode</div>
