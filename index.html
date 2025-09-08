@@ -5,102 +5,103 @@
   <title>📚 My Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Général */
     body {
-      background: url('https://i.imgur.com/nHTyV5O.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: radial-gradient(circle at top, #1c1c1c, #0e0e0e); /* Fond dégradé sombre */
+      color: #e8e6e3; /* Texte doux */
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 2rem;
-      color: #fdf5e6;
       display: flex;
       flex-direction: column;
       align-items: center;
+      line-height: 1.6;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #f0d9b5;
-      border-bottom: 4px solid #8b5e3c;
+      color: #f4b860; /* Ambre chaleureux */
+      border-bottom: 2px solid #3a2f23; 
       padding-bottom: 0.5rem;
-      text-shadow: 2px 2px 5px #000;
       text-align: center;
+      text-shadow: 0 2px 6px rgba(244, 184, 96, 0.4);
     }
 
+    /* Input de recherche */
     #searchInput {
       margin: 1rem 0 2rem 0;
-      padding: 0.8rem;
+      padding: 0.8rem 1rem;
       width: 100%;
       max-width: 500px;
       font-size: 1rem;
-      border: 1px solid #8b5e3c;
-      border-radius: 8px;
-      background-color: rgba(43, 26, 14, 0.9);
-      color: #fdf5e6;
+      border: none;
+      border-radius: 10px;
+      background-color: #2a2a2a;
+      color: #f1f1f1;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
     }
 
-    /* Bookshelf grid */
+    #searchInput:focus {
+      outline: none;
+      background-color: #333;
+      box-shadow: 0 0 8px rgba(244, 184, 96, 0.5);
+    }
+
+    /* Liste des livres */
     .book-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
       width: 100%;
-      max-width: 1100px;
-      padding: 1rem;
+      max-width: 1000px;
     }
 
+    /* Style pour chaque carte de livre */
     .book-card {
-      background: linear-gradient(to bottom, #d1b38f, #a67c52);
-      border-radius: 4px;
-      padding: 0.5rem;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      background: linear-gradient(145deg, #1f1f1f, #2b2b2b);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       text-align: center;
+      display: block;
       text-decoration: none;
-      color: #2c1b10;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      height: 220px;
-      position: relative;
+      border: 1px solid #3a2f23; /* brun foncé */
     }
 
     .book-card:hover {
-      transform: translateY(-6px) rotate(-1deg);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 24px rgba(244, 184, 96, 0.25);
     }
 
     .book-title {
-      font-size: 0.95rem;
-      margin-top: auto;
-      background: rgba(0,0,0,0.5);
-      color: #fdf5e6;
-      padding: 0.3rem;
-      border-radius: 3px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #f4b860;
     }
 
-    /* Fake book spine look */
-    .book-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 10px;
-      background: rgba(0,0,0,0.4);
-      border-radius: 4px 0 0 4px;
+    .book-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #ffda9e; /* doré plus doux */
+      text-shadow: 0 2px 6px rgba(255, 218, 158, 0.3);
     }
 
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
       }
+
       .book-card {
-        height: 180px;
+        padding: 1rem;
       }
+
       .book-title {
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
   </style>
@@ -110,7 +111,7 @@
   <input type="text" id="searchInput" placeholder="🔍 Rechercher un titre...">
 
   <div class="book-list" id="bookList">
-    <!-- Liste de livres avec design gris, rouge et noir -->
+    <!-- Liste de livres -->
     <a href="pdf/Discours-de-la-méthode.pdf" target="_blank" class="book-card">
       <span class="book-icon">📖</span>
       <div class="book-title">Book 1 - Discours de la méthode</div>
@@ -168,16 +169,14 @@
 
     <a href="pdf/Le Nectar Cacheté - Safi Al Mubarakfawri.pdf" target="_blank" class="book-card">
       <span class="book-icon">📖</span>
-      <div class="book-title">Book 12 - Le Nectar Cacheté - Safi Al Mubarakfawri</div>
+      <div class="book-title">Book 12 - Le Nectar Cacheté</div>
     </a>
 
     <a href="pdf/samih-atef-el-zein-qualite-du-missionnaire-rotated.pdf" target="_blank" class="book-card">
       <span class="book-icon">📖</span>
-      <div class="book-title">Book 13 - Qualite du Missionnaire - Samih Atef El Zein</div>
+      <div class="book-title">Book 13 - Qualité du Missionnaire</div>
     </a>
-
   </div>
-
 
   <script>
     const searchInput = document.getElementById("searchInput");
