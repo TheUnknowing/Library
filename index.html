@@ -200,7 +200,7 @@
       const searchTerm = this.value.toLowerCase();
       bookCards.forEach(card => {
         const title = card.querySelector(".book-title").textContent.toLowerCase();
-        card.style.display = title.includes(searchTerm) ? "block" : "none";
+        card.style.display = title.includes(searchTerm) ? "flex" : "none";
       });
     });
   </script>
