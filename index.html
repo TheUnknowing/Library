@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <title>📚 My Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Général */
     body {
-      background: radial-gradient(circle at top, #1c1c1c, #0e0e0e); /* Fond dégradé sombre */
-      color: #e8e6e3; /* Texte doux */
-      font-family: 'Georgia', serif;
+      background: radial-gradient(circle at top, #1c1c1c, #0e0e0e);
+      color: #e8e6e3;
+      font-family: 'Lora', serif;
       margin: 0;
       padding: 2rem;
       display: flex;
@@ -19,9 +22,10 @@
     }
 
     h1 {
+      font-family: 'Merriweather', serif;
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #f4b860; /* Ambre chaleureux */
+      color: #f4b860;
       border-bottom: 2px solid #3a2f23; 
       padding-bottom: 0.5rem;
       text-align: center;
@@ -41,6 +45,7 @@
       color: #f1f1f1;
       box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease;
+      font-family: 'Nunito', sans-serif;
     }
 
     #searchInput:focus {
@@ -58,17 +63,19 @@
       max-width: 1000px;
     }
 
-    /* Style pour chaque carte de livre */
+    /* Carte livre */
     .book-card {
       background: linear-gradient(145deg, #1f1f1f, #2b2b2b);
       border-radius: 14px;
-      padding: 1.5rem;
+      padding: 1rem;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-      text-align: center;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-decoration: none;
-      border: 1px solid #3a2f23; /* brun foncé */
+      border: 1px solid #3a2f23;
+      overflow: hidden;
     }
 
     .book-card:hover {
@@ -77,18 +84,21 @@
     }
 
     .book-title {
-      font-size: 1.15rem;
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin: 0.8rem 0;
       color: #f4b860;
+      text-align: center;
     }
 
-    .book-icon {
-      font-size: 2rem;
+    .book-preview {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 8px;
       margin-bottom: 0.5rem;
-      display: block;
-      color: #ffda9e; /* doré plus doux */
-      text-shadow: 0 2px 6px rgba(255, 218, 158, 0.3);
+      background: #1a1a1a;
     }
 
     @media (max-width: 600px) {
@@ -97,11 +107,15 @@
       }
 
       .book-card {
-        padding: 1rem;
+        padding: 0.8rem;
       }
 
       .book-title {
         font-size: 1rem;
+      }
+
+      .book-preview {
+        height: 180px;
       }
     }
   </style>
@@ -113,67 +127,67 @@
   <div class="book-list" id="bookList">
     <!-- Liste de livres -->
     <a href="pdf/Discours-de-la-méthode.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/Discours-de-la-méthode.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 1 - Discours de la méthode</div>
     </a>
 
     <a href="pdf/EssaisI.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/EssaisI.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 2 - Essais I</div>
     </a>
 
     <a href="pdf/Influence et manipulation - L'art de la persuasion.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/Influence et manipulation - L'art de la persuasion.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 3 - Influence et manipulation</div>
     </a>
 
     <a href="pdf/M_Aurele_Pensees.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/M_Aurele_Pensees.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 4 - Pensées de Marc Aurèle</div>
     </a>
 
     <a href="pdf/PSYCHOLOGIE SOCIALE - COURS (28 Pages - 172 Ko).pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/PSYCHOLOGIE SOCIALE - COURS (28 Pages - 172 Ko).pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 5 - Psychologie sociale</div>
     </a>
 
     <a href="pdf/Power_extrait.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/Power_extrait.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 6 - Power (extrait)</div>
     </a>
 
     <a href="pdf/Thinking, Fast and Slow by Daniel Kahneman (z-lib.org).pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/Thinking, Fast and Slow by Daniel Kahneman (z-lib.org).pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 7 - Thinking, Fast and Slow</div>
     </a>
 
     <a href="pdf/Tracers in the Dark PDF.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/Tracers in the Dark PDF.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 8 - Tracers in the Dark</div>
     </a>
 
     <a href="pdf/art-de-la-guerre.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+     <iframe src="pdf/art-de-la-guerre.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 9 - L'art de la guerre</div>
     </a>
 
     <a href="pdf/julien_taoteking.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/julien_taoteking.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 10 - Tao Te King</div>
     </a>
 
     <a href="pdf/nietzsche_zarathoustra.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/nietzsche_zarathoustra.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 11 - Nietzsche - Zarathoustra</div>
     </a>
 
     <a href="pdf/Le Nectar Cacheté - Safi Al Mubarakfawri.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/Le Nectar Cacheté - Safi Al Mubarakfawri.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 12 - Le Nectar Cacheté</div>
     </a>
 
     <a href="pdf/samih-atef-el-zein-qualite-du-missionnaire-rotated.pdf" target="_blank" class="book-card">
-      <span class="book-icon">📖</span>
+      <iframe src="pdf/samih-atef-el-zein-qualite-du-missionnaire-rotated.pdf#page=1&view=FitH" class="book-preview"></iframe>
       <div class="book-title">Book 13 - Qualité du Missionnaire</div>
     </a>
   </div>
